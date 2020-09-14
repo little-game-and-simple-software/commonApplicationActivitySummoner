@@ -48,7 +48,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		640, /* width */
 		480, /* height */
 		NULL,NULL,hInstance,NULL);
-	MessageBox(NULL,"A","D",MB_OK);
+//	MessageBox(NULL,"A","D",MB_OK);
+
 	if(hwnd == NULL) {
 		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
 		return 0;
