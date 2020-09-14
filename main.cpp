@@ -1,5 +1,5 @@
 #include <windows.h>
-
+//ctrl+enter进行代码补全 
 /* This is where all the input to the window goes to */
 LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) {
 	switch(Message) {
@@ -43,18 +43,24 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE,"WindowClass","helloworld世界",WS_VISIBLE|WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, /* x */
-		CW_USEDEFAULT, /* y */
-		640, /* width */
-		480, /* height */
+		CW_USEDEFAULT, //Y
+		CW_USEDEFAULT, //X
+		640,
+		480, 
 		NULL,NULL,hInstance,NULL);
-//	MessageBox(NULL,"A","D",MB_OK);
+		
 
+	//HWND	awd=CreateWindowEx(0,"WindowClass","abc",WS_VISIBLE|WS_VISIBLE,0,0,200,200,NULL,NULL,hInstance,NULL);
+//	MessageBox(NULL,"A","D",MB_OK);
+//	ShowWindow(awd,NULL);
 	if(hwnd == NULL) {
 		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
 		return 0;
 	}
-
+	if(hwnd == NULL) {
+		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
+		return 0;
+	}
 	/*
 		This is the heart of our program where all input is processed and 
 		sent to WndProc. Note that GetMessage blocks code flow until it receives something, so
