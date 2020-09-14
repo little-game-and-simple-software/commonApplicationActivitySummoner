@@ -1,5 +1,8 @@
 #include <windows.h>
+<<<<<<< HEAD
 #include <stdio.h>
+=======
+>>>>>>> dev
 //ctrl+enter进行代码补全 
 /* This is where all the input to the window goes to */
 //hwnd是窗口的句柄。
