@@ -1,6 +1,10 @@
 #include <windows.h>
-
+#include <stdio.h>
+//ctrl+enter进行代码补全 
 /* This is where all the input to the window goes to */
+//hwnd是窗口的句柄。
+/*Message是消息代码；例如，WM_SIZE消息指示窗口已调整大小。
+wParam和lParam包含与该消息有关的其他数据。确切含义取决于消息代码。*/
 LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) {
 	switch(Message) {
 		
@@ -9,7 +13,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) 
 			PostQuitMessage(0);
 			break;
 		}
-		
+		case WM_SIZE:
+		{
+			printf("windows resized!");
+			break;
+		}
 		/* All other messages (a lot of them) are processed using default procedures */
 		default:
 			return DefWindowProc(hwnd, Message, wParam, lParam);
@@ -43,22 +51,33 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 	hwnd = CreateWindowEx(WS_EX_CLIENTEDGE,"WindowClass","helloworld世界",WS_VISIBLE|WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, /* x */
-		CW_USEDEFAULT, /* y */
-		640, /* width */
-		480, /* height */
+		CW_USEDEFAULT, //Y
+		CW_USEDEFAULT, //X
+		640,
+		480, 
 		NULL,NULL,hInstance,NULL);
-	MessageBox(NULL,"A","D",MB_OK);
+		
+
+	//HWND	awd=CreateWindowEx(0,"WindowClass","abc",WS_VISIBLE|WS_VISIBLE,0,0,200,200,NULL,NULL,hInstance,NULL);
+//	MessageBox(NULL,"A","D",MB_OK);
+//	ShowWindow(awd,NULL);
 	if(hwnd == NULL) {
 		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
 		return 0;
 	}
-
+	if(hwnd == NULL) {
+		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
+		return 0;
+	}
 	/*
 		This is the heart of our program where all input is processed and 
 		sent to WndProc. Note that GetMessage blocks code flow until it receives something, so
 		this loop will not produce unreasonably high CPU usage
 	*/
+	//获得消息 循环取出事件 
+	//当您要退出应用程序并退出消息循环时，请调用PostQuitMessage函数。
+	//PostQuitMessage函数将一个WM_QUIT消息上的消息队列。WM_QUIT是一条特殊的消息：它使GetMessage返回零，表示消息循环结束。这是修改后的消息循环。
+	
 	while(GetMessage(&msg, NULL, 0, 0) > 0) { /* If no error is received... */
 		TranslateMessage(&msg); /* Translate key codes to chars if present */
 		DispatchMessage(&msg); /* Send it to WndProc */
