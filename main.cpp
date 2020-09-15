@@ -1,8 +1,8 @@
 #include <windows.h>
-<<<<<<< HEAD
+
 #include <stdio.h>
-=======
->>>>>>> dev
+#include <commctrl.h>
+
 //ctrl+enter进行代码补全 
 /* This is where all the input to the window goes to */
 //hwnd是窗口的句柄。
@@ -21,6 +21,31 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT Message, WPARAM wParam, LPARAM lParam) 
 			printf("windows resized!");
 			break;
 		}
+		case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hwnd, &ps);
+
+        // All painting occurs here, between BeginPaint and EndPaint.
+
+        FillRect(hdc, &ps.rcPaint, (HBRUSH) (COLOR_WINDOW+1));
+
+        EndPaint(hwnd, &ps);
+        printf("paint!"); 
+        break;
+    }
+    case WM_MOUSEMOVE:
+	{
+		printf("鼠标移动");
+		break;
+	} 
+    case WM_CLOSE:
+    if (MessageBox(hwnd, "Really quit?", "My application", MB_OKCANCEL) == IDOK)
+    {
+        DestroyWindow(hwnd);
+    }
+    // Else: User canceled. Do nothing.
+    return 0;
 		/* All other messages (a lot of them) are processed using default procedures */
 		default:
 			return DefWindowProc(hwnd, Message, wParam, lParam);
@@ -60,7 +85,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		480, 
 		NULL,NULL,hInstance,NULL);
 		
-
+//	CreateToolbarEx(hwnd,TBSTYLE_LIST,0,0);
 	//HWND	awd=CreateWindowEx(0,"WindowClass","abc",WS_VISIBLE|WS_VISIBLE,0,0,200,200,NULL,NULL,hInstance,NULL);
 //	MessageBox(NULL,"A","D",MB_OK);
 //	ShowWindow(awd,NULL);
@@ -68,10 +93,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
 		return 0;
 	}
-	if(hwnd == NULL) {
-		MessageBox(NULL, "Window Creation Failed!","Error!",MB_ICONEXCLAMATION|MB_OK);
-		return 0;
-	}
+
 	/*
 		This is the heart of our program where all input is processed and 
 		sent to WndProc. Note that GetMessage blocks code flow until it receives something, so
