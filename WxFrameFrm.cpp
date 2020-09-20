@@ -15,7 +15,6 @@
 //wxDev-C++ designer will remove them
 ////Header Include Start
 #include "Images/WxFrameFrm_frmNewForm_XPM.xpm"
-#include "Images/WxFrameFrm_WxStaticBitmap1_XPM.xpm"
 ////Header Include End
 
 //----------------------------------------------------------------------------
@@ -29,6 +28,7 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(WxFrameFrm::OnClose)
+	EVT_MENU(ID_MNU______1014, WxFrameFrm::Mnu1014Click)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -50,14 +50,32 @@ void WxFrameFrm::CreateGUIControls()
 	//Add the custom code before or after the blocks
 	////GUI Items Creation Start
 
-	wxInitAllImageHandlers();   //Initialize graphic format handlers
+	WxMenuBar1 = new wxMenuBar();
+	wxMenu *ID_MNU______1012_Mnu_Obj = new wxMenu();
+	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______1015, _("打开"), _(""), wxITEM_NORMAL);
+	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______1016, _("新建"), _(""), wxITEM_NORMAL);
+	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______________1017, _("关闭当前文件"), _(""), wxITEM_NORMAL);
+	WxMenuBar1->Append(ID_MNU______1012_Mnu_Obj, _("文件"));
+	
+	wxMenu *ID_MNU_____________BUILD_1019_Mnu_Obj = new wxMenu();
+	WxMenuBar1->Append(ID_MNU_____________BUILD_1019_Mnu_Obj, _("生成界面文件build"));
+	wxMenu *ID_MNU__________1018_Mnu_Obj = new wxMenu();
+	ID_MNU__________1018_Mnu_Obj->Append(ID_MNU______1020, _("按钮"), _(""), wxITEM_NORMAL);
+	ID_MNU__________1018_Mnu_Obj->Append(ID_MNU________1021, _("编辑框"), _(""), wxITEM_NORMAL);
+	ID_MNU__________1018_Mnu_Obj->Append(ID_MNU______1022, _("文本"), _(""), wxITEM_NORMAL);
+	ID_MNU__________1018_Mnu_Obj->Append(ID_MNU______1023, _("图片"), _(""), wxITEM_NORMAL);
+	WxMenuBar1->Append(ID_MNU__________1018_Mnu_Obj, _("添加组件"));
+	
+	wxMenu *ID_MNU______1013_Mnu_Obj = new wxMenu();
+	ID_MNU______1013_Mnu_Obj->Append(ID_MNU______1014, _("关于"), _(""), wxITEM_NORMAL);
+	WxMenuBar1->Append(ID_MNU______1013_Mnu_Obj, _("帮助"));
+	SetMenuBar(WxMenuBar1);
 
-	wxBitmap WxStaticBitmap1_BITMAP(WxFrameFrm_WxStaticBitmap1_XPM);
-	WxStaticBitmap1 = new wxStaticBitmap(this, ID_WXSTATICBITMAP1, WxStaticBitmap1_BITMAP, wxPoint(302, 191), wxSize(32, 32));
+	WxStaticText2 = new wxStaticText(this, ID_WXSTATICTEXT2, _("添加组件+(游标blender)"), wxPoint(172, 358), wxDefaultSize, 0, _("WxStaticText2"));
+	WxStaticText2->SetBackgroundColour(wxColour(_("WHITE")));
 
-	WxStaticText1 = new wxStaticText(this, ID_WXSTATICTEXT1, _("WxStaticText1"), wxPoint(51, 127), wxDefaultSize, 0, _("WxStaticText1"));
-
-	WxButton1 = new wxButton(this, ID_WXBUTTON1, _("WxButton1"), wxPoint(387, 252), wxSize(75, 25), 0, wxDefaultValidator, _("WxButton1"));
+	WxStaticText1 = new wxStaticText(this, ID_WXSTATICTEXT1, _("欢迎使用"), wxPoint(475, 157), wxDefaultSize, 0, _("WxStaticText1"));
+	WxStaticText1->SetBackgroundColour(wxColour(_("WHITE")));
 
 	SetTitle(_("通用应用程序界面文件生成器"));
 	SetIcon(WxFrameFrm_frmNewForm_XPM);
@@ -78,4 +96,14 @@ void WxFrameFrm::OnClose(wxCloseEvent& event)
 void WxFrameFrm::WxToolBar1Menu(wxCommandEvent& event)
 {
 	// insert your code here
+}
+
+/*
+ * Mnu1014Click
+ */
+ //about 
+void WxFrameFrm::Mnu1014Click(wxCommandEvent& event)
+{
+	// insert your code here
+	
 }

@@ -26,9 +26,8 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
-#include <wx/statbmp.h>
+#include <wx/menu.h>
 #include <wx/stattext.h>
-#include <wx/button.h>
 ////Header Include End
 
 ////Dialog Style Start
@@ -45,15 +44,16 @@ class WxFrameFrm : public wxFrame
 		WxFrameFrm(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("WxFrame"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = WxFrameFrm_STYLE);
 		virtual ~WxFrameFrm();
 		void WxToolBar1Menu(wxCommandEvent& event);
+		void Mnu1014Click(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
-		wxStaticBitmap *WxStaticBitmap1;
+		wxMenuBar *WxMenuBar1;
+		wxStaticText *WxStaticText2;
 		wxStaticText *WxStaticText1;
-		wxButton *WxButton1;
 		////GUI Control Declaration End
 		
 	private:
@@ -64,9 +64,21 @@ class WxFrameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
-			ID_WXSTATICBITMAP1 = 1010,
+			ID_MNU______1012 = 1012,
+			ID_MNU______1015 = 1015,
+			ID_MNU______1016 = 1016,
+			ID_MNU______________1017 = 1017,
+			ID_MNU_____________BUILD_1019 = 1019,
+			ID_MNU__________1018 = 1018,
+			ID_MNU______1020 = 1020,
+			ID_MNU________1021 = 1021,
+			ID_MNU______1022 = 1022,
+			ID_MNU______1023 = 1023,
+			ID_MNU______1013 = 1013,
+			ID_MNU______1014 = 1014,
+			
+			ID_WXSTATICTEXT2 = 1011,
 			ID_WXSTATICTEXT1 = 1005,
-			ID_WXBUTTON1 = 1004,
 			////GUI Enum Control ID End
 			ID_DUMMY_VALUE_ //don't remove this value unless you have other enum values
 		};

@@ -1,7 +1,7 @@
 # Project: WxFrame
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 20/09/20 20:07
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 20/09/20 20:27
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe
@@ -39,7 +39,7 @@ $(BIN): $(OBJ)
 Objects/MingW/WxFrameApp.o: $(GLOBALDEPS) WxFrameApp.cpp WxFrameApp.h WxFrameFrm.h
 	$(CPP) -c WxFrameApp.cpp -o Objects/MingW/WxFrameApp.o $(CXXFLAGS)
 
-Objects/MingW/WxFrameFrm.o: $(GLOBALDEPS) WxFrameFrm.cpp WxFrameFrm.h Images/WxFrameFrm_frmNewForm_XPM.xpm Images/WxFrameFrm_WxStaticBitmap1_XPM.xpm
+Objects/MingW/WxFrameFrm.o: $(GLOBALDEPS) WxFrameFrm.cpp WxFrameFrm.h Images/WxFrameFrm_frmNewForm_XPM.xpm
 	$(CPP) -c WxFrameFrm.cpp -o Objects/MingW/WxFrameFrm.o $(CXXFLAGS)
 
 Objects/MingW/WxFrame_private.res: Objects/MingW/WxFrame_private.rc WxFrameApp.rc 
