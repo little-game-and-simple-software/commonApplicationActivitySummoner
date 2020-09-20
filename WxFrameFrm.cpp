@@ -14,6 +14,7 @@
 //Header Include Start and Header Include End
 //wxDev-C++ designer will remove them
 ////Header Include Start
+#include "Images/WxFrameFrm_frmNewForm_XPM.xpm"
 #include "Images/WxFrameFrm_WxStaticBitmap1_XPM.xpm"
 ////Header Include End
 
@@ -58,8 +59,8 @@ void WxFrameFrm::CreateGUIControls()
 
 	WxButton1 = new wxButton(this, ID_WXBUTTON1, _("WxButton1"), wxPoint(387, 252), wxSize(75, 25), 0, wxDefaultValidator, _("WxButton1"));
 
-	SetTitle(_("WxFrame"));
-	SetIcon(wxNullIcon);
+	SetTitle(_("通用应用程序界面文件生成器"));
+	SetIcon(WxFrameFrm_frmNewForm_XPM);
 	SetSize(8,8,1000,720);
 	Center();
 	

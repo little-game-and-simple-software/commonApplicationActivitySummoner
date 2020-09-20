@@ -5,7 +5,7 @@ Order=-1,0,1,2,3,4,5
 Open=1
 Top=0
 CursorCol=1
-CursorRow=1
+CursorRow=11
 TopLine=1
 LeftChar=1
 [Editor_1]
@@ -25,9 +25,9 @@ LeftChar=1
 [Editor_3]
 Open=1
 Top=0
-CursorCol=1
-CursorRow=1
-TopLine=1
+CursorCol=2
+CursorRow=40
+TopLine=17
 LeftChar=1
 [Editor_4]
 Open=1
