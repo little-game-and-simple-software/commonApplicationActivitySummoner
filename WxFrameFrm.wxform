@@ -168,8 +168,8 @@ object frmNewForm: TfrmNewForm
   object WxStaticText1: TWxStaticText
     Left = 475
     Top = 157
-    Width = 66
-    Height = 30
+    Width = 52
+    Height = 21
     Caption = #27426#36814#20351#29992
     Color = clWhite
     ParentColor = False
@@ -424,5 +424,44 @@ object frmNewForm: TfrmNewForm
       2E4B656570466F726D61740816436172726965642E57785F46696C6548697374
       6F72790800000000}
     Wx_HasHistory = False
+  end
+  object WxTreeCtrl1: TWxTreeCtrl
+    Left = 779
+    Top = 4
+    Width = 121
+    Height = 97
+    Indent = 19
+    TabOrder = 3
+    Items.Data = {
+      010000001D0000000000000000000000FFFFFFFFFFFFFFFF0000000003000000
+      04726F6F741E0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+      00056368696C641F0000000000000000000000FFFFFFFFFFFFFFFF0000000000
+      000000066368696C6431230000000000000000000000FFFFFFFFFFFFFFFF0000
+      0000000000000ABDDAB5E3B1E0BCADC6F7}
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTreeCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXTREECTRL1'
+    Wx_IDValue = 1024
+    Wx_TreeviewStyle = [wxTR_HAS_BUTTONS, wxTR_LINES_AT_ROOT, wxTR_HIDE_ROOT]
+    Wx_PaneCaption = 'WxTreeCtrl1'
+    Wx_PaneName = 'WxTreeCtrl1_Pane'
+    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+    Wx_Aui_Dockable_Direction = []
+    Wx_Aui_Pane_Style = []
+    Wx_Aui_Pane_Buttons = []
+    Wx_BestSize_Height = 0
+    Wx_BestSize_Width = 0
+    Wx_MinSize_Height = 0
+    Wx_MinSize_Width = 0
+    Wx_MaxSize_Height = 0
+    Wx_MaxSize_Width = 0
+    Wx_Floating_Height = 0
+    Wx_Floating_Width = 0
+    Wx_Floating_X_Pos = 0
+    Wx_Floating_Y_Pos = 0
   end
 end

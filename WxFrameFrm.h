@@ -26,6 +26,7 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/treectrl.h>
 #include <wx/menu.h>
 #include <wx/stattext.h>
 ////Header Include End
@@ -53,6 +54,7 @@ class WxFrameFrm : public wxFrame
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxTreeCtrl *WxTreeCtrl1;
 		wxMenuBar *WxMenuBar1;
 		wxStaticText *WxStaticText2;
 		wxStaticText *WxStaticText1;
@@ -66,6 +68,7 @@ class WxFrameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_WXTREECTRL1 = 1024,
 			ID_MNU______1012 = 1012,
 			ID_MNU______1015 = 1015,
 			ID_MNU______1016 = 1016,
