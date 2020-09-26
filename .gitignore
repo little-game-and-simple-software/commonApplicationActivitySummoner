@@ -1,3 +1,8 @@
 #注释 忽略.o 
 *.o
+<<<<<<< HEAD
 *.win
+=======
+/Output 
+/Objects 
+>>>>>>> Branch_42eb776d
