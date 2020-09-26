@@ -7,7 +7,7 @@
 ----------
 # 截图： #
 
-![](http://a)
+![](https://raw.githubusercontent.com/little-game-and-simple-software/commonApplicationActivitySummoner/master/Images/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202020-09-26%20190053.png)
 ----------
 
 ## 如果需要开发此软件，你需要到这个网站下载开发用的ide(IDE里面包括了wxwidget这个开源库,相当于配置好了开发环境,而且自带界面文件可视化编辑器)
