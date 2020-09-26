@@ -1,0 +1,46 @@
+# Project: WxFrame
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 20/09/20 20:56
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/WxFrameApp.o Objects/MingW/WxFrameFrm.o Objects/MingW/WxFrame_private.res
+LINKOBJ   = "Objects/MingW/WxFrameApp.o" "Objects/MingW/WxFrameFrm.o" Objects/MingW/WxFrame_private.res
+LIBS      = -L"F:/wxDevCpp/Dev-Cpp/lib/wx/gcc_lib" -L"F:/wxDevCpp/Dev-Cpp/lib" -L"F:/wxDevCpp/Dev-Cpp/MinGW32/lib" -mwindows -l$(WXLIBNAME) -l$(WXLIBNAME)_gl -lwxscintilla -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregexu -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32  
+INCS      = -I"F:/wxDevCpp/Dev-Cpp/MinGW32/include"
+CXXINCS   = -I"F:/wxDevCpp/Dev-Cpp/MinGW32/include" -I"F:/wxDevCpp/Dev-Cpp/" -I"F:/wxDevCpp/Dev-Cpp/include/common"
+RCINCS    = --include-dir "F:/wxDevCpp/Dev-Cpp/include/common"
+BIN       = Output/MingW/WxFrame.exe
+DEFINES   = -D__WXMSW__ -D__GNUWIN32__ -D_UNICODE
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/WxFrameApp.o: $(GLOBALDEPS) WxFrameApp.cpp WxFrameApp.h WxFrameFrm.h
+	$(CPP) -c WxFrameApp.cpp -o Objects/MingW/WxFrameApp.o $(CXXFLAGS)
+
+Objects/MingW/WxFrameFrm.o: $(GLOBALDEPS) WxFrameFrm.cpp WxFrameFrm.h Images/WxFrameFrm_frmNewForm_XPM.xpm
+	$(CPP) -c WxFrameFrm.cpp -o Objects/MingW/WxFrameFrm.o $(CXXFLAGS)
+
+Objects/MingW/WxFrame_private.res: Objects/MingW/WxFrame_private.rc WxFrameApp.rc 
+	$(WINDRES) --input-format=rc -o Objects/MingW/WxFrame_private.res $(RCINCS) Objects/MingW/WXFRAM~1.RC -O coff
