@@ -44,7 +44,9 @@ class WxFrameFrm : public wxFrame
 		WxFrameFrm(wxWindow *parent, wxWindowID id = 1, const wxString &title = wxT("WxFrame"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = WxFrameFrm_STYLE);
 		virtual ~WxFrameFrm();
 		void WxToolBar1Menu(wxCommandEvent& event);
+		void WxFrameFrmMouseEvents(wxMouseEvent& event);
 		void Mnu1014Click(wxCommandEvent& event);
+		void WxFrameFrmKeyDown(wxKeyEvent& event);
 		
 	private:
 		//Do not add custom control declarations between

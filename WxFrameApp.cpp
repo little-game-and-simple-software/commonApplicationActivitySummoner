@@ -9,14 +9,16 @@
 
 #include "WxFrameApp.h"
 #include "WxFrameFrm.h"
-
+#include <stdio.h>
 IMPLEMENT_APP(WxFrameFrmApp)
 
 bool WxFrameFrmApp::OnInit()
 {
     WxFrameFrm* frame = new WxFrameFrm(NULL);
     SetTopWindow(frame);
+    //printf("init");
     frame->Show();
+ 
     return true;
 }
  

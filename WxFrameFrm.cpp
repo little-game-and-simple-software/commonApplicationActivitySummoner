@@ -16,7 +16,7 @@
 ////Header Include Start
 #include "Images/WxFrameFrm_frmNewForm_XPM.xpm"
 ////Header Include End
-
+#include <stdio.h>
 //----------------------------------------------------------------------------
 // WxFrameFrm
 //----------------------------------------------------------------------------
@@ -28,6 +28,8 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	////Manual Code End
 	
 	EVT_CLOSE(WxFrameFrm::OnClose)
+	EVT_KEY_DOWN(WxFrameFrm::WxFrameFrmKeyDown)
+	EVT_MOUSE_EVENTS(WxFrameFrm::WxFrameFrmMouseEvents)
 	EVT_MENU(ID_MNU______1014, WxFrameFrm::Mnu1014Click)
 END_EVENT_TABLE()
 ////Event Table End
@@ -106,4 +108,28 @@ void WxFrameFrm::Mnu1014Click(wxCommandEvent& event)
 {
 	// insert your code here
 	
+}
+
+/*
+ * WxFrameFrmMouseEvents
+ */
+ //Êó±êÊÂ¼þ 
+void WxFrameFrm::WxFrameFrmMouseEvents(wxMouseEvent& event)
+{
+   printf("mouse event"); 
+   if(event.Moving())
+   {
+    printf("mouse moved");    
+    }
+   //if event
+	// insert your code here
+}
+
+/*
+ * WxFrameFrmKeyDown
+ */
+void WxFrameFrm::WxFrameFrmKeyDown(wxKeyEvent& event)
+{
+    printf("on key down");
+	// insert your code here
 }
