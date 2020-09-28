@@ -30,6 +30,7 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	EVT_CLOSE(WxFrameFrm::OnClose)
 	EVT_KEY_DOWN(WxFrameFrm::WxFrameFrmKeyDown)
 	EVT_MOUSE_EVENTS(WxFrameFrm::WxFrameFrmMouseEvents)
+	EVT_MENU(ID_MNU______1031, WxFrameFrm::SaveFIle)
 	EVT_MENU(ID_MNU______1014, WxFrameFrm::Showabout)
 END_EVENT_TABLE()
 ////Event Table End
@@ -79,6 +80,7 @@ void WxFrameFrm::CreateGUIControls()
 	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______1015, _("打开"), _(""), wxITEM_NORMAL);
 	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______1016, _("新建"), _(""), wxITEM_NORMAL);
 	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______________1017, _("关闭当前文件"), _(""), wxITEM_NORMAL);
+	ID_MNU______1012_Mnu_Obj->Append(ID_MNU______1031, _("保存"), _(""), wxITEM_NORMAL);
 	WxMenuBar1->Append(ID_MNU______1012_Mnu_Obj, _("文件"));
 	
 	wxMenu *ID_MNU_____________BUILD_1019_Mnu_Obj = new wxMenu();
@@ -98,6 +100,8 @@ void WxFrameFrm::CreateGUIControls()
 	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(384, 245), wxSize(223, 196));
 
 	WxStaticText3 = new wxStaticText(WxPanel1, ID_WXSTATICTEXT3, _("panel"), wxPoint(59, 68), wxDefaultSize, 0, _("WxStaticText3"));
+
+	WxSaveFileDialog1 =  new wxFileDialog(this, _("Choose a file"), _(""), _(""), _("*.*"), wxFD_SAVE);
 
 	SetTitle(_("通用应用程序界面文件生成器"));
 	SetIcon(WxFrameFrm_frmNewForm_XPM);
@@ -163,4 +167,17 @@ void WxFrameFrm::Showabout(wxCommandEvent& event)
     msg.Printf("这个软件由小沙盒工作室创始人128hh开发，小沙盒工作室保留版权");    
 	wxMessageBox(msg,"关于",wxOK,this);
     // insert your code here
+}
+
+/*
+ * SaveFIle
+ */
+void WxFrameFrm::SaveFIle(wxCommandEvent& event)
+{
+    //保存文件
+    //弹出窗口 
+    WxSaveFileDialog1->ShowModal();
+    //saveFileDialog(this,"save");
+    
+	// insert your code here
 }

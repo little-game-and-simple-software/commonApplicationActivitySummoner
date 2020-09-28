@@ -26,6 +26,7 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/filedlg.h>
 #include <wx/panel.h>
 #include <wx/menu.h>
 #include <wx/listctrl.h>
@@ -52,12 +53,14 @@ class WxFrameFrm : public wxFrame
 		void Mnu1014Click(wxCommandEvent& event);
 		void WxFrameFrmKeyDown(wxKeyEvent& event);
 		void Showabout(wxCommandEvent& event);
+		void SaveFIle(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxFileDialog *WxSaveFileDialog1;
 		wxStaticText *WxStaticText3;
 		wxPanel *WxPanel1;
 		wxMenuBar *WxMenuBar1;
@@ -82,6 +85,7 @@ class WxFrameFrm : public wxFrame
 			ID_MNU______1015 = 1015,
 			ID_MNU______1016 = 1016,
 			ID_MNU______________1017 = 1017,
+			ID_MNU______1031 = 1031,
 			ID_MNU_____________BUILD_1019 = 1019,
 			ID_MNU__________1018 = 1018,
 			ID_MNU______1020 = 1020,
