@@ -237,6 +237,192 @@ object frmNewForm: TfrmNewForm
     Wx_Floating_X_Pos = 0
     Wx_Floating_Y_Pos = 0
   end
+  object WxTreeCtrl1: TWxTreeCtrl
+    Left = 779
+    Top = 4
+    Width = 121
+    Height = 97
+    Indent = 19
+    TabOrder = 3
+    Items.Data = {
+      010000001D0000000000000000000000FFFFFFFFFFFFFFFF0000000003000000
+      04726F6F741E0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
+      00056368696C641F0000000000000000000000FFFFFFFFFFFFFFFF0000000000
+      000000066368696C6431230000000000000000000000FFFFFFFFFFFFFFFF0000
+      0000000000000ABDDAB5E3B1E0BCADC6F7}
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxTreeCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXTREECTRL1'
+    Wx_IDValue = 1024
+    Wx_TreeviewStyle = [wxTR_HAS_BUTTONS, wxTR_LINES_AT_ROOT, wxTR_HIDE_ROOT]
+    Wx_PaneCaption = 'WxTreeCtrl1'
+    Wx_PaneName = 'WxTreeCtrl1_Pane'
+    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+    Wx_Aui_Dockable_Direction = []
+    Wx_Aui_Pane_Style = []
+    Wx_Aui_Pane_Buttons = []
+    Wx_BestSize_Height = 0
+    Wx_BestSize_Width = 0
+    Wx_MinSize_Height = 0
+    Wx_MinSize_Width = 0
+    Wx_MaxSize_Height = 0
+    Wx_MaxSize_Width = 0
+    Wx_Floating_Height = 0
+    Wx_Floating_Width = 0
+    Wx_Floating_X_Pos = 0
+    Wx_Floating_Y_Pos = 0
+  end
+  object WxListBox1: TWxListBox
+    Left = 692
+    Top = 301
+    Width = 121
+    Height = 97
+    ItemHeight = 17
+    TabOrder = 4
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxListBox'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXLISTBOX1'
+    Wx_IDValue = 1025
+    Wx_ListboxStyle = []
+    Wx_ListboxSubStyle = wxLB_SINGLE
+    Wx_PaneCaption = 'WxListBox1'
+    Wx_PaneName = 'WxListBox1_Pane'
+    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+    Wx_Aui_Dockable_Direction = []
+    Wx_Aui_Pane_Style = []
+    Wx_Aui_Pane_Buttons = []
+    Wx_BestSize_Height = 0
+    Wx_BestSize_Width = 0
+    Wx_MinSize_Height = 0
+    Wx_MinSize_Width = 0
+    Wx_MaxSize_Height = 0
+    Wx_MaxSize_Width = 0
+    Wx_Floating_Height = 0
+    Wx_Floating_Width = 0
+    Wx_Floating_X_Pos = 0
+    Wx_Floating_Y_Pos = 0
+  end
+  object WxListCtrl1: TWxListCtrl
+    Left = 687
+    Top = 151
+    Width = 194
+    Height = 119
+    Columns = <
+      item
+        Caption = #23646#24615
+      end
+      item
+        Caption = #25991#23383
+      end
+      item
+        Caption = #39640#24230
+      end
+      item
+        Caption = #39640#24230
+      end>
+    TabOrder = 5
+    ViewStyle = vsReport
+    Wx_BGColor = clBlack
+    Wx_Class = 'wxListCtrl'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_IDName = 'ID_WXLISTCTRL1'
+    Wx_IDValue = 1026
+    Wx_ListviewStyle = []
+    Wx_ListviewView = wxLC_REPORT
+    Wx_PaneCaption = 'WxListCtrl1'
+    Wx_PaneName = 'WxListCtrl1_Pane'
+    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+    Wx_Aui_Dockable_Direction = []
+    Wx_Aui_Pane_Style = []
+    Wx_Aui_Pane_Buttons = []
+    Wx_BestSize_Height = 0
+    Wx_BestSize_Width = 0
+    Wx_MinSize_Height = 0
+    Wx_MinSize_Width = 0
+    Wx_MaxSize_Height = 0
+    Wx_MaxSize_Width = 0
+    Wx_Floating_Height = 0
+    Wx_Floating_Width = 0
+    Wx_Floating_X_Pos = 0
+    Wx_Floating_Y_Pos = 0
+  end
+  object WxPanel1: TWxPanel
+    Left = 384
+    Top = 245
+    Width = 223
+    Height = 196
+    TabOrder = 6
+    Wx_BKColor = clBlack
+    Wx_Class = 'wxPanel'
+    Wx_ControlOrientation = wxControlVertical
+    Wx_Default = False
+    Wx_EventList.Strings = (
+      'EVT_UPDATE_UI:OnUpdateUI')
+    Wx_FGColor = clBlack
+    Wx_GeneralStyle = []
+    Wx_Hidden = False
+    Wx_IDName = 'ID_WXPANEL1'
+    Wx_IDValue = 1028
+    Wx_PaneCaption = 'WxPanel1'
+    Wx_PaneName = 'WxPanel1_Pane'
+    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+    Wx_Aui_Dockable_Direction = []
+    Wx_Aui_Pane_Style = []
+    Wx_Aui_Pane_Buttons = []
+    Wx_BestSize_Height = 0
+    Wx_BestSize_Width = 0
+    Wx_MinSize_Height = 0
+    Wx_MinSize_Width = 0
+    Wx_MaxSize_Height = 0
+    Wx_MaxSize_Width = 0
+    Wx_Floating_Height = 0
+    Wx_Floating_Width = 0
+    Wx_Floating_X_Pos = 0
+    Wx_Floating_Y_Pos = 0
+    object WxStaticText3: TWxStaticText
+      Left = 59
+      Top = 68
+      Width = 36
+      Height = 21
+      Caption = 'panel'
+      TabOrder = 0
+      Wx_BGColor = clBlack
+      Wx_Class = 'wxStaticText'
+      Wx_ControlOrientation = wxControlVertical
+      Wx_FGColor = clBlack
+      Wx_GeneralStyle = []
+      Wx_Hidden = False
+      Wx_IDName = 'ID_WXSTATICTEXT3'
+      Wx_IDValue = 1029
+      Wx_LabelStyle = []
+      Wx_PaneCaption = 'WxStaticText3'
+      Wx_PaneName = 'WxStaticText3_Pane'
+      Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
+      Wx_Aui_Dockable_Direction = []
+      Wx_Aui_Pane_Style = []
+      Wx_Aui_Pane_Buttons = []
+      Wx_BestSize_Height = 0
+      Wx_BestSize_Width = 0
+      Wx_MinSize_Height = 0
+      Wx_MinSize_Width = 0
+      Wx_MaxSize_Height = 0
+      Wx_MaxSize_Width = 0
+      Wx_Floating_Height = 0
+      Wx_Floating_Width = 0
+      Wx_Floating_X_Pos = 0
+      Wx_Floating_Y_Pos = 0
+    end
+  end
   object WxMenuBar1: TWxMenuBar
     Left = 226
     Top = 78
@@ -410,58 +596,19 @@ object frmNewForm: TfrmNewForm
       6172726965642E57585F4249544D41502E446174610A0C00000007544269746D
       61700000000012436172726965642E4B656570466F726D617408164361727269
       65642E57785F46696C65486973746F72790818436172726965642E5778437573
-      746F6D4D656E754974656D0A7601000011000000545778437573746F6D4D656E
+      746F6D4D656E754974656D0A7301000011000000545778437573746F6D4D656E
       754974656D5450463018547778437573746F6D4D656E754974656D5772617070
       65720011436172726965642E49735375624D656E750810436172726965642E45
-      56545F4D656E75060C4D6E7531303134436C69636B12436172726965642E5778
-      5F456E61626C65640911436172726965642E57785F48696464656E0811436172
-      726965642E57785F49444E616D65061049445F4D4E555F5F5F5F5F5F31303134
-      12436172726965642E57785F494456616C756503F60318436172726965642E57
-      785F4D656E754974656D5374796C65070F77784D6E7549746D5F4E6F726D616C
-      12436172726965642E57785F43617074696F6E120200000073518E4E12436172
-      726965642E57785F436865636B65640816436172726965642E57585F4249544D
-      41502E446174610A0C00000007544269746D6170000000001243617272696564
-      2E4B656570466F726D61740816436172726965642E57785F46696C6548697374
-      6F72790800000000}
+      56545F4D656E75060953686F7761626F757412436172726965642E57785F456E
+      61626C65640911436172726965642E57785F48696464656E0811436172726965
+      642E57785F49444E616D65061049445F4D4E555F5F5F5F5F5F31303134124361
+      72726965642E57785F494456616C756503F60318436172726965642E57785F4D
+      656E754974656D5374796C65070F77784D6E7549746D5F4E6F726D616C124361
+      72726965642E57785F43617074696F6E120200000073518E4E12436172726965
+      642E57785F436865636B65640816436172726965642E57585F4249544D41502E
+      446174610A0C00000007544269746D61700000000012436172726965642E4B65
+      6570466F726D61740816436172726965642E57785F46696C65486973746F7279
+      0800000000}
     Wx_HasHistory = False
-  end
-  object WxTreeCtrl1: TWxTreeCtrl
-    Left = 779
-    Top = 4
-    Width = 121
-    Height = 97
-    Indent = 19
-    TabOrder = 3
-    Items.Data = {
-      010000001D0000000000000000000000FFFFFFFFFFFFFFFF0000000003000000
-      04726F6F741E0000000000000000000000FFFFFFFFFFFFFFFF00000000000000
-      00056368696C641F0000000000000000000000FFFFFFFFFFFFFFFF0000000000
-      000000066368696C6431230000000000000000000000FFFFFFFFFFFFFFFF0000
-      0000000000000ABDDAB5E3B1E0BCADC6F7}
-    Wx_BGColor = clBlack
-    Wx_Class = 'wxTreeCtrl'
-    Wx_ControlOrientation = wxControlVertical
-    Wx_FGColor = clBlack
-    Wx_GeneralStyle = []
-    Wx_Hidden = False
-    Wx_IDName = 'ID_WXTREECTRL1'
-    Wx_IDValue = 1024
-    Wx_TreeviewStyle = [wxTR_HAS_BUTTONS, wxTR_LINES_AT_ROOT, wxTR_HIDE_ROOT]
-    Wx_PaneCaption = 'WxTreeCtrl1'
-    Wx_PaneName = 'WxTreeCtrl1_Pane'
-    Wx_Aui_Dock_Direction = wxAUI_DOCK_NONE
-    Wx_Aui_Dockable_Direction = []
-    Wx_Aui_Pane_Style = []
-    Wx_Aui_Pane_Buttons = []
-    Wx_BestSize_Height = 0
-    Wx_BestSize_Width = 0
-    Wx_MinSize_Height = 0
-    Wx_MinSize_Width = 0
-    Wx_MaxSize_Height = 0
-    Wx_MaxSize_Width = 0
-    Wx_Floating_Height = 0
-    Wx_Floating_Width = 0
-    Wx_Floating_X_Pos = 0
-    Wx_Floating_Y_Pos = 0
   end
 end

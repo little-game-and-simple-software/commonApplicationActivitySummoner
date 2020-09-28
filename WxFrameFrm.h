@@ -26,8 +26,11 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
-#include <wx/treectrl.h>
+#include <wx/panel.h>
 #include <wx/menu.h>
+#include <wx/listctrl.h>
+#include <wx/listbox.h>
+#include <wx/treectrl.h>
 #include <wx/stattext.h>
 ////Header Include End
 
@@ -48,14 +51,19 @@ class WxFrameFrm : public wxFrame
 		void WxFrameFrmMouseEvents(wxMouseEvent& event);
 		void Mnu1014Click(wxCommandEvent& event);
 		void WxFrameFrmKeyDown(wxKeyEvent& event);
+		void Showabout(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
-		wxTreeCtrl *WxTreeCtrl1;
+		wxStaticText *WxStaticText3;
+		wxPanel *WxPanel1;
 		wxMenuBar *WxMenuBar1;
+		wxListCtrl *WxListCtrl1;
+		wxListBox *WxListBox1;
+		wxTreeCtrl *WxTreeCtrl1;
 		wxStaticText *WxStaticText2;
 		wxStaticText *WxStaticText1;
 		////GUI Control Declaration End
@@ -68,7 +76,8 @@ class WxFrameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
-			ID_WXTREECTRL1 = 1024,
+			ID_WXSTATICTEXT3 = 1029,
+			ID_WXPANEL1 = 1028,
 			ID_MNU______1012 = 1012,
 			ID_MNU______1015 = 1015,
 			ID_MNU______1016 = 1016,
@@ -82,6 +91,9 @@ class WxFrameFrm : public wxFrame
 			ID_MNU______1013 = 1013,
 			ID_MNU______1014 = 1014,
 			
+			ID_WXLISTCTRL1 = 1026,
+			ID_WXLISTBOX1 = 1025,
+			ID_WXTREECTRL1 = 1024,
 			ID_WXSTATICTEXT2 = 1011,
 			ID_WXSTATICTEXT1 = 1005,
 			////GUI Enum Control ID End
