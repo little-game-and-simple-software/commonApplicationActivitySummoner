@@ -115,7 +115,7 @@ void WxFrameFrm::CreateGUIControls()
 	WxStaticText4 = new wxStaticText(WxToolBar1, ID_WXSTATICTEXT4, _("新建文件.xml"), wxPoint(0, 0), wxDefaultSize, 0, _("WxStaticText4"));
 	WxToolBar1->AddControl(WxStaticText4);
 
-	WxOpenFileDialog1 =  new wxFileDialog(this, _("Choose a file"), _(""), _(""), _("*.*"), wxFD_OPEN);
+	WxOpenFileDialog1 =  new wxFileDialog(this, _("打开文件"), _(""), _(""), _("*.*"), wxFD_OPEN);
 
 	wxArrayString arrayStringFor_WxComboBox1;
 	arrayStringFor_WxComboBox1.Add(_("预览模式（展示解析后的结果）"));
@@ -225,11 +225,11 @@ void WxFrameFrm::Mnu1015Click(wxCommandEvent& event)
 }
 
 /*
- * openFile
+ * 打开文件openFile
  */
 void WxFrameFrm::openFile(wxCommandEvent& event)
 {
-    
+  //  WxOpenFileDialog1.GetCurrentlySelectedFilename();
     WxOpenFileDialog1->ShowModal();
 	// insert your code here
 }
