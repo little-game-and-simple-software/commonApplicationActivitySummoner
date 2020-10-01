@@ -33,6 +33,7 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	EVT_MENU(ID_MNU______1015, WxFrameFrm::openFile)
 	EVT_MENU(ID_MNU______1031, WxFrameFrm::SaveFIle)
 	EVT_MENU(ID_MNU______1014, WxFrameFrm::Showabout)
+	EVT_MENU(ID_MNU__________1039, WxFrameFrm::HowToUse)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -54,10 +55,10 @@ void WxFrameFrm::CreateGUIControls()
 	//Add the custom code before or after the blocks
 	////GUI Items Creation Start
 
-	WxStaticText1 = new wxStaticText(this, ID_WXSTATICTEXT1, _("欢迎使用"), wxPoint(475, 157), wxDefaultSize, 0, _("WxStaticText1"));
+	WxStaticText1 = new wxStaticText(this, ID_WXSTATICTEXT1, _("欢迎使用"), wxPoint(694, 33), wxDefaultSize, 0, _("WxStaticText1"));
 	WxStaticText1->SetBackgroundColour(wxColour(_("WHITE")));
 
-	WxStaticText2 = new wxStaticText(this, ID_WXSTATICTEXT2, _("添加组件+(游标blender)"), wxPoint(172, 358), wxDefaultSize, 0, _("WxStaticText2"));
+	WxStaticText2 = new wxStaticText(this, ID_WXSTATICTEXT2, _("添加组件+(游标blender)"), wxPoint(196, 88), wxDefaultSize, 0, _("WxStaticText2"));
 	WxStaticText2->SetBackgroundColour(wxColour(_("WHITE")));
 
 	WxTreeCtrl1 = new wxTreeCtrl(this, ID_WXTREECTRL1, wxPoint(725, 71), wxSize(121, 97), wxTR_HAS_BUTTONS | wxTR_LINES_AT_ROOT | wxTR_HIDE_ROOT, wxDefaultValidator, _("WxTreeCtrl1"));
@@ -73,7 +74,7 @@ void WxFrameFrm::CreateGUIControls()
 	WxListCtrl1->InsertColumn(2, _("高度"), wxLIST_FORMAT_LEFT, 50);
 	WxListCtrl1->InsertColumn(3, _("高度"), wxLIST_FORMAT_LEFT, 50);
 
-	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(443, 257), wxSize(223, 196));
+	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(252, 160), wxSize(325, 302));
 
 	WxStaticText3 = new wxStaticText(WxPanel1, ID_WXSTATICTEXT3, _("panel"), wxPoint(59, 68), wxDefaultSize, 0, _("WxStaticText3"));
 
@@ -96,6 +97,7 @@ void WxFrameFrm::CreateGUIControls()
 	
 	wxMenu *ID_MNU______1013_Mnu_Obj = new wxMenu();
 	ID_MNU______1013_Mnu_Obj->Append(ID_MNU______1014, _("关于"), _(""), wxITEM_NORMAL);
+	ID_MNU______1013_Mnu_Obj->Append(ID_MNU__________1039, _("使用说明"), _(""), wxITEM_NORMAL);
 	WxMenuBar1->Append(ID_MNU______1013_Mnu_Obj, _("帮助"));
 	
 	wxMenu *ID_MNU______1036_Mnu_Obj = new wxMenu();
@@ -111,6 +113,11 @@ void WxFrameFrm::CreateGUIControls()
 	WxToolBar1->AddControl(WxStaticText4);
 
 	WxOpenFileDialog1 =  new wxFileDialog(this, _("Choose a file"), _(""), _(""), _("*.*"), wxFD_OPEN);
+
+	wxArrayString arrayStringFor_WxComboBox1;
+	arrayStringFor_WxComboBox1.Add(_("预览模式（展示解析后的结果）"));
+	arrayStringFor_WxComboBox1.Add(_("源代码（纯文本如.xml)格式"));
+	WxComboBox1 = new wxComboBox(this, ID_WXCOMBOBOX1, _("切换显示模式"), wxPoint(717, 314), wxSize(145, 25), arrayStringFor_WxComboBox1, 0, wxDefaultValidator, _("WxComboBox1"));
 
 	WxToolBar1->Realize();
 	SetToolBar(WxToolBar1);
@@ -216,5 +223,16 @@ void WxFrameFrm::openFile(wxCommandEvent& event)
 {
     
     WxOpenFileDialog1->ShowModal();
+	// insert your code here
+}
+
+/*
+ * HowToUse
+ */
+void WxFrameFrm::HowToUse(wxCommandEvent& event)
+{
+    wxString msg;
+    msg.Printf("首先新建文件或者打开文件，然后再设计模式里进行编辑，最后选择导出build，根据自己的需求，选择是否导出对应平台的界面文件");    
+	wxMessageBox(msg,"关于",wxOK,this);
 	// insert your code here
 }
