@@ -33,6 +33,7 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	
 	EVT_TEXT(ID_WXEDIT1,WxFrameFrm::WxEdit1Updated)
 	EVT_MENU(ID_MNU______1015, WxFrameFrm::openFile)
+	EVT_MENU(ID_MNU______1016, WxFrameFrm::CreateNewFile)
 	EVT_MENU(ID_MNU______1031, WxFrameFrm::SaveFIle)
 	EVT_MENU(ID_MNU______1014, WxFrameFrm::Showabout)
 	EVT_MENU(ID_MNU__________1039, WxFrameFrm::HowToUse)
@@ -108,7 +109,7 @@ void WxFrameFrm::CreateGUIControls()
 	WxMenuBar1->Append(ID_MNU______1036_Mnu_Obj, _("设置"));
 	SetMenuBar(WxMenuBar1);
 
-	WxSaveFileDialog1 =  new wxFileDialog(this, _("Choose a file"), _(""), _(""), _("*.*"), wxFD_SAVE);
+	WxSaveFileDialog1 =  new wxFileDialog(this, _("保存文件"), _(""), _(""), _("*.*"), wxFD_SAVE);
 
 	WxToolBar1 = new wxToolBar(this, ID_WXTOOLBAR1, wxPoint(0, 0), wxSize(984, 29));
 
@@ -141,7 +142,12 @@ void WxFrameFrm::OnClose(wxCloseEvent& event)
 {
 	Destroy();
 }
-
+//打开文件 
+void WxFrameFrm::OnOpen(wxCommandEvent& WXUNUSED(event))
+{
+    
+    
+}
 /*
  * WxToolBar1Menu
  */
@@ -150,15 +156,6 @@ void WxFrameFrm::WxToolBar1Menu(wxCommandEvent& event)
 	// insert your code here
 }
 
-/*
- * Mnu1014Click
- */
- //about 
-void WxFrameFrm::Mnu1014Click(wxCommandEvent& event)
-{
-	// insert your code here
-	
-}
 
 /*
  * WxFrameFrmMouseEvents
@@ -230,7 +227,18 @@ void WxFrameFrm::Mnu1015Click(wxCommandEvent& event)
 void WxFrameFrm::openFile(wxCommandEvent& event)
 {
   //  WxOpenFileDialog1.GetCurrentlySelectedFilename();
-    WxOpenFileDialog1->ShowModal();
+    int FileOpenReturnState=WxOpenFileDialog1->ShowModal();
+   // wxLogError("test error on File Open");
+    if(FileOpenReturnState==wxID_OK)
+    {
+        wxLogError("文件打开后返回OK");
+        }
+    else
+    {
+        wxLogError("遇到一个错误！！");
+         
+        }
+   // wxLogError(FileOpenReturnState); 
 	// insert your code here
 }
 
@@ -261,5 +269,24 @@ void WxFrameFrm::SetUpLanguage(wxCommandEvent& event)
     wxString msg;
     msg.Printf("此功能未开发，其他部分也有很多未开发的地方，欢迎各位大佬加入这个开源项目，贡献代码，通用应用程序界面生成器，帮助别人就是帮助自己，这是个辅助编程软件");    
 	wxMessageBox(msg,"设置语言",wxOK,this);
+	// insert your code here
+}
+
+/*
+ * CreateNewFile
+ */
+void WxFrameFrm::CreateNewFile(wxCommandEvent& event)
+{
+    int FileOpenReturnState=WxOpenFileDialog1->ShowModal();
+   // wxLogError("test error on File Open");
+    if(FileOpenReturnState==wxID_OK)
+    {
+        wxLogError("文件打开后返回OK");
+        }
+    else
+    {
+        wxLogError("遇到一个错误！！");
+         
+        }
 	// insert your code here
 }

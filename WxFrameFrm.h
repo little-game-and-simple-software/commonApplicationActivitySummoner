@@ -52,7 +52,9 @@ class WxFrameFrm : public wxFrame
 		virtual ~WxFrameFrm();
 		void WxToolBar1Menu(wxCommandEvent& event);
 		void WxFrameFrmMouseEvents(wxMouseEvent& event);
-		void Mnu1014Click(wxCommandEvent& event);
+		
+		void OnOpen(wxCommandEvent& WXUNUSED(event));
+	
 		void WxFrameFrmKeyDown(wxKeyEvent& event);
 		void Showabout(wxCommandEvent& event);
 		void SaveFIle(wxCommandEvent& event);
@@ -62,6 +64,7 @@ class WxFrameFrm : public wxFrame
 		void HowToUse(wxCommandEvent& event);
 		void WxEdit1Updated(wxCommandEvent& event);
 		void SetUpLanguage(wxCommandEvent& event);
+		void CreateNewFile(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
