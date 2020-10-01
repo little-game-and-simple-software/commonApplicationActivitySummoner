@@ -1,7 +1,7 @@
 # Project: WxFrame
 # Compiler: Default GCC compiler
 # Compiler Type: MingW 3
-# Makefile created by wxDev-C++ IDE 7.4.2.569 on 28/09/20 19:27
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 01/10/20 12:57
 
 WXLIBNAME = wxmsw29u
 CPP       = g++.exe
