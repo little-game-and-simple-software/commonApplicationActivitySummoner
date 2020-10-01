@@ -26,6 +26,7 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/textctrl.h>
 #include <wx/combobox.h>
 #include <wx/toolbar.h>
 #include <wx/filedlg.h>
@@ -59,12 +60,16 @@ class WxFrameFrm : public wxFrame
 		void Mnu1015Click(wxCommandEvent& event);
 		void openFile(wxCommandEvent& event);
 		void HowToUse(wxCommandEvent& event);
+		void WxEdit1Updated(wxCommandEvent& event);
+		void SetUpLanguage(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxStaticText *WxStaticText5;
+		wxTextCtrl *WxEdit1;
 		wxComboBox *WxComboBox1;
 		wxFileDialog *WxOpenFileDialog1;
 		wxStaticText *WxStaticText4;
@@ -87,6 +92,8 @@ class WxFrameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_WXSTATICTEXT5 = 1041,
+			ID_WXEDIT1 = 1040,
 			ID_WXCOMBOBOX1 = 1038,
 			ID_WXSTATICTEXT4 = 1034,
 			ID_WXTOOLBAR1 = 1032,

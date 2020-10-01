@@ -30,10 +30,13 @@ BEGIN_EVENT_TABLE(WxFrameFrm,wxFrame)
 	EVT_CLOSE(WxFrameFrm::OnClose)
 	EVT_KEY_DOWN(WxFrameFrm::WxFrameFrmKeyDown)
 	EVT_MOUSE_EVENTS(WxFrameFrm::WxFrameFrmMouseEvents)
+	
+	EVT_TEXT(ID_WXEDIT1,WxFrameFrm::WxEdit1Updated)
 	EVT_MENU(ID_MNU______1015, WxFrameFrm::openFile)
 	EVT_MENU(ID_MNU______1031, WxFrameFrm::SaveFIle)
 	EVT_MENU(ID_MNU______1014, WxFrameFrm::Showabout)
 	EVT_MENU(ID_MNU__________1039, WxFrameFrm::HowToUse)
+	EVT_MENU(ID_MNU______1037, WxFrameFrm::SetUpLanguage)
 END_EVENT_TABLE()
 ////Event Table End
 
@@ -58,25 +61,25 @@ void WxFrameFrm::CreateGUIControls()
 	WxStaticText1 = new wxStaticText(this, ID_WXSTATICTEXT1, _("欢迎使用"), wxPoint(694, 33), wxDefaultSize, 0, _("WxStaticText1"));
 	WxStaticText1->SetBackgroundColour(wxColour(_("WHITE")));
 
-	WxStaticText2 = new wxStaticText(this, ID_WXSTATICTEXT2, _("添加组件+(游标blender)"), wxPoint(196, 88), wxDefaultSize, 0, _("WxStaticText2"));
+	WxStaticText2 = new wxStaticText(this, ID_WXSTATICTEXT2, _("添加组件+(游标blender)"), wxPoint(12, 93), wxDefaultSize, 0, _("WxStaticText2"));
 	WxStaticText2->SetBackgroundColour(wxColour(_("WHITE")));
 
-	WxTreeCtrl1 = new wxTreeCtrl(this, ID_WXTREECTRL1, wxPoint(725, 71), wxSize(121, 97), wxTR_HAS_BUTTONS | wxTR_LINES_AT_ROOT | wxTR_HIDE_ROOT, wxDefaultValidator, _("WxTreeCtrl1"));
+	WxTreeCtrl1 = new wxTreeCtrl(this, ID_WXTREECTRL1, wxPoint(723, 65), wxSize(121, 97), wxTR_HAS_BUTTONS | wxTR_LINES_AT_ROOT | wxTR_HIDE_ROOT, wxDefaultValidator, _("WxTreeCtrl1"));
 	wxTreeItemId WxTreeCtrl1NodeID = WxTreeCtrl1->AddRoot(_(""));
 	WxTreeCtrl1NodeID = WxTreeCtrl1->AppendItem(WxTreeCtrl1NodeID, _("root"));
 	WxTreeCtrl1NodeID = WxTreeCtrl1->AppendItem(WxTreeCtrl1NodeID, _("child"));
 	WxTreeCtrl1NodeID = WxTreeCtrl1->AppendItem(WxTreeCtrl1->GetItemParent(WxTreeCtrl1NodeID), _("child1"));
 	WxTreeCtrl1NodeID = WxTreeCtrl1->AppendItem(WxTreeCtrl1->GetItemParent(WxTreeCtrl1NodeID), _("节点编辑器"));
 
-	WxListCtrl1 = new wxListCtrl(this, ID_WXLISTCTRL1, wxPoint(725, 182), wxSize(194, 119), wxLC_REPORT, wxDefaultValidator, _("WxListCtrl1"));
+	WxListCtrl1 = new wxListCtrl(this, ID_WXLISTCTRL1, wxPoint(724, 176), wxSize(194, 119), wxLC_REPORT, wxDefaultValidator, _("WxListCtrl1"));
 	WxListCtrl1->InsertColumn(0, _("属性"), wxLIST_FORMAT_LEFT, 50);
 	WxListCtrl1->InsertColumn(1, _("文字"), wxLIST_FORMAT_LEFT, 50);
 	WxListCtrl1->InsertColumn(2, _("高度"), wxLIST_FORMAT_LEFT, 50);
 	WxListCtrl1->InsertColumn(3, _("高度"), wxLIST_FORMAT_LEFT, 50);
 
-	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(252, 160), wxSize(325, 302));
+	WxPanel1 = new wxPanel(this, ID_WXPANEL1, wxPoint(268, 92), wxSize(231, 362));
 
-	WxStaticText3 = new wxStaticText(WxPanel1, ID_WXSTATICTEXT3, _("panel"), wxPoint(59, 68), wxDefaultSize, 0, _("WxStaticText3"));
+	WxStaticText3 = new wxStaticText(WxPanel1, ID_WXSTATICTEXT3, _("这里是预览界面panel"), wxPoint(60, 68), wxDefaultSize, 0, _("WxStaticText3"));
 
 	WxMenuBar1 = new wxMenuBar();
 	wxMenu *ID_MNU______1012_Mnu_Obj = new wxMenu();
@@ -117,7 +120,12 @@ void WxFrameFrm::CreateGUIControls()
 	wxArrayString arrayStringFor_WxComboBox1;
 	arrayStringFor_WxComboBox1.Add(_("预览模式（展示解析后的结果）"));
 	arrayStringFor_WxComboBox1.Add(_("源代码（纯文本如.xml)格式"));
-	WxComboBox1 = new wxComboBox(this, ID_WXCOMBOBOX1, _("切换显示模式"), wxPoint(717, 314), wxSize(145, 25), arrayStringFor_WxComboBox1, 0, wxDefaultValidator, _("WxComboBox1"));
+	WxComboBox1 = new wxComboBox(this, ID_WXCOMBOBOX1, _("切换显示模式"), wxPoint(728, 311), wxSize(145, 25), arrayStringFor_WxComboBox1, 0, wxDefaultValidator, _("WxComboBox1"));
+
+	WxEdit1 = new wxTextCtrl(this, ID_WXEDIT1, _("editBox"), wxPoint(515, 112), wxSize(114, 145), 0, wxDefaultValidator, _("WxEdit1"));
+
+	WxStaticText5 = new wxStaticText(this, ID_WXSTATICTEXT5, _("源码界面+编辑框"), wxPoint(521, 78), wxDefaultSize, 0, _("WxStaticText5"));
+	WxStaticText5->SetBackgroundColour(wxColour(_("WHITE")));
 
 	WxToolBar1->Realize();
 	SetToolBar(WxToolBar1);
@@ -182,7 +190,7 @@ void WxFrameFrm::WxFrameFrmKeyDown(wxKeyEvent& event)
 void WxFrameFrm::Showabout(wxCommandEvent& event)
 {
     wxString msg;
-    msg.Printf("这个软件由小沙盒工作室创始人128hh开发，小沙盒工作室保留版权");    
+    msg.Printf("这个软件由小沙盒工作室创始人128hh开发，小沙盒工作室保留版权，此软件为开源软件，处于积极开发状态，作者是个中职技校生，专业不是学习的编程");    
 	wxMessageBox(msg,"关于",wxOK,this);
     // insert your code here
 }
@@ -234,5 +242,24 @@ void WxFrameFrm::HowToUse(wxCommandEvent& event)
     wxString msg;
     msg.Printf("首先新建文件或者打开文件，然后再设计模式里进行编辑，最后选择导出build，根据自己的需求，选择是否导出对应平台的界面文件");    
 	wxMessageBox(msg,"关于",wxOK,this);
+	// insert your code here
+}
+
+/*
+ * WxEdit1Updated
+ */
+void WxFrameFrm::WxEdit1Updated(wxCommandEvent& event)
+{
+	// insert your code here
+}
+
+/*
+ * SetUpLanguage
+ */
+void WxFrameFrm::SetUpLanguage(wxCommandEvent& event)
+{
+    wxString msg;
+    msg.Printf("此功能未开发，其他部分也有很多未开发的地方，欢迎各位大佬加入这个开源项目，贡献代码，通用应用程序界面生成器，帮助别人就是帮助自己，这是个辅助编程软件");    
+	wxMessageBox(msg,"设置语言",wxOK,this);
 	// insert your code here
 }
