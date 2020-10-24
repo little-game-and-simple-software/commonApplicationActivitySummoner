@@ -26,7 +26,14 @@
 //Header Include Start and Header Include End.
 //wxDev-C++ designer will remove them. Add custom headers after the block.
 ////Header Include Start
+#include <wx/textctrl.h>
+#include <wx/combobox.h>
+#include <wx/toolbar.h>
+#include <wx/filedlg.h>
 #include <wx/menu.h>
+#include <wx/panel.h>
+#include <wx/listctrl.h>
+#include <wx/treectrl.h>
 #include <wx/stattext.h>
 ////Header Include End
 
@@ -45,15 +52,37 @@ class WxFrameFrm : public wxFrame
 		virtual ~WxFrameFrm();
 		void WxToolBar1Menu(wxCommandEvent& event);
 		void WxFrameFrmMouseEvents(wxMouseEvent& event);
-		void Mnu1014Click(wxCommandEvent& event);
+		
+		void OnOpen(wxCommandEvent& WXUNUSED(event));
+	
 		void WxFrameFrmKeyDown(wxKeyEvent& event);
+		void Showabout(wxCommandEvent& event);
+		void SaveFIle(wxCommandEvent& event);
+		void WxListBox1Selected(wxCommandEvent& event);
+		void Mnu1015Click(wxCommandEvent& event);
+		void openFile(wxCommandEvent& event);
+		void HowToUse(wxCommandEvent& event);
+		void WxEdit1Updated(wxCommandEvent& event);
+		void SetUpLanguage(wxCommandEvent& event);
+		void CreateNewFile(wxCommandEvent& event);
 		
 	private:
 		//Do not add custom control declarations between
 		//GUI Control Declaration Start and GUI Control Declaration End.
 		//wxDev-C++ will remove them. Add custom code after the block.
 		////GUI Control Declaration Start
+		wxStaticText *WxStaticText5;
+		wxTextCtrl *WxEdit1;
+		wxComboBox *WxComboBox1;
+		wxFileDialog *WxOpenFileDialog1;
+		wxStaticText *WxStaticText4;
+		wxToolBar *WxToolBar1;
+		wxFileDialog *WxSaveFileDialog1;
 		wxMenuBar *WxMenuBar1;
+		wxStaticText *WxStaticText3;
+		wxPanel *WxPanel1;
+		wxListCtrl *WxListCtrl1;
+		wxTreeCtrl *WxTreeCtrl1;
 		wxStaticText *WxStaticText2;
 		wxStaticText *WxStaticText1;
 		////GUI Control Declaration End
@@ -66,10 +95,16 @@ class WxFrameFrm : public wxFrame
 		enum
 		{
 			////GUI Enum Control ID Start
+			ID_WXSTATICTEXT5 = 1041,
+			ID_WXEDIT1 = 1040,
+			ID_WXCOMBOBOX1 = 1038,
+			ID_WXSTATICTEXT4 = 1034,
+			ID_WXTOOLBAR1 = 1032,
 			ID_MNU______1012 = 1012,
 			ID_MNU______1015 = 1015,
 			ID_MNU______1016 = 1016,
 			ID_MNU______________1017 = 1017,
+			ID_MNU______1031 = 1031,
 			ID_MNU_____________BUILD_1019 = 1019,
 			ID_MNU__________1018 = 1018,
 			ID_MNU______1020 = 1020,
@@ -78,7 +113,14 @@ class WxFrameFrm : public wxFrame
 			ID_MNU______1023 = 1023,
 			ID_MNU______1013 = 1013,
 			ID_MNU______1014 = 1014,
+			ID_MNU__________1039 = 1039,
+			ID_MNU______1036 = 1036,
+			ID_MNU______1037 = 1037,
 			
+			ID_WXSTATICTEXT3 = 1029,
+			ID_WXPANEL1 = 1028,
+			ID_WXLISTCTRL1 = 1026,
+			ID_WXTREECTRL1 = 1024,
 			ID_WXSTATICTEXT2 = 1011,
 			ID_WXSTATICTEXT1 = 1005,
 			////GUI Enum Control ID End
